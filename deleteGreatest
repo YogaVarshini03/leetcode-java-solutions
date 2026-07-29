@@ -1,0 +1,12 @@
+class Solution {
+    public int deleteGreatestValue(int[][] grid) {
+        for (int[] row : grid) Arrays.sort(row); 
+        int ans = 0;
+        for (int col = grid[0].length - 1; col >= 0; col--) { 
+            int max = 0;
+            for (int[] row : grid) max = Math.max(max, row[col]); 
+            ans += max; 
+        }
+        return ans;
+    }
+}
